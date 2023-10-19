@@ -1,0 +1,22 @@
+:root {
+    --bg: #242526;
+    --bg-accent: #484a4d;
+    --text-color: #dadce1;
+    --border: 1px solid #474a4d;
+    --border-radius: 8px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 58px;
+    width: 300px;
+    background-color: var(--bg);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.dropdown:hover {
+    background-color: #525357;
+}
+

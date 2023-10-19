@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import DropdownMenu from './DropdownMenu'
 
 function App() {
+
+  const base = ['Plain', 'Coconut', 'Strawberry', 'Blueberry'];
+
+  const fruits = ['Strawberry', 'Blueberry', 'Banana', 'Mango', 'Raspberry'];
+
+  const handleSelect = (selectedOptions) => {
+    console.log('Selected:', selectedOptions);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="dropdown-container">
+        <div className="single-dropdown">
+          <DropdownMenu base={base} onSelect={handleSelect}/>
+        </div>
+        <div className="multiple-dropdown">
+          <DropdownMenu fruits={fruits} multiSelect={true} onSelect={handleSelect}/>
+        </div>
+      </div>
     </div>
   );
 }
