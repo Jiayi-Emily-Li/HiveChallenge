@@ -1,5 +1,6 @@
 import './App.css';
-import DropdownMenu from './DropdownMenu'
+import SingleDropdownMenu from './SingleDropdownMenu'
+import MultiDropdownMenu from './MultiDropdownMenu'
 
 function App() {
 
@@ -15,10 +16,10 @@ function App() {
     <div className="App">
       <div className="dropdown-container">
         <div className="single-dropdown">
-          <DropdownMenu base={base} onSelect={handleSelect}/>
+          <SingleDropdownMenu base={base} onSelect={handleSelect}/>
         </div>
         <div className="multiple-dropdown">
-          <DropdownMenu fruits={fruits} multiSelect={true} onSelect={handleSelect}/>
+          <MultiDropdownMenu fruits={fruits} onSelect={handleSelect}/>
         </div>
       </div>
     </div>
