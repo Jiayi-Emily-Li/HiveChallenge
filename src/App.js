@@ -6,7 +6,7 @@ function App() {
 
   const bases = ['Plain Yogurt', 'Coconut Yogurt', 'Strawberry Yogurt', 'Blueberry Yogurt'];
 
-  const fruits = ['Strawberry', 'Blueberry', 'Banana', 'Mango', 'Raspberry'];
+  const fruits = ['Strawberry', 'Blueberry', 'Banana', 'Mango', 'Raspberry', 'Pineapple', 'Orange', 'Kiwi'];
 
   const selectCheck = (selectedOptions) => {
     console.log('Selected:', selectedOptions);
