@@ -27,7 +27,11 @@ function SingleDropdownMenu({bases, selected}) {
             </button>
             {isDropdownDisplayed && (
                 <ul className="dropdown-item">
-                    
+                    <li className="select-options">
+                        {selectedOptions.length > 0 && (
+                        <button onClick={deselectAll}>Reset</button>
+                        )}
+                    </li>
                     {bases.map(base => (
                         <li key={base}>
                             <div onClick={() => singleSelect(base)} className="base-container">
@@ -36,11 +40,6 @@ function SingleDropdownMenu({bases, selected}) {
                             </div>
                         </li>
                     ))}
-                    <li className="select-options">
-                        {selectedOptions.length > 0 && (
-                        <button onClick={deselectAll}>Reset</button>
-                        )}
-                    </li>
                 </ul>
                     
             )

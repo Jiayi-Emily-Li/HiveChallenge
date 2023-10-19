@@ -36,12 +36,30 @@ function MultiDropdownMenu({fruits, selected}) {
     return (
         <div className="dropdown">
             <button onClick={toggleDropdown}>
-                {selectedOptions.length
-                    ? selectedOptions.join(', ')
-                    : "Select Your Fruits"}
+                <div className="selected-container">
+                    <ul className="selected">
+                    {selectedOptions.length ? (
+                        selectedOptions.map((s) => (
+                            <li key={s}>
+                                <span>{s}</span>
+                            </li>
+                        ))
+                    ) : (
+                        <li className="default">Select Your Fruits</li>
+                    )}
+                    </ul>
+                </div>
             </button>
             {isDropdownDisplayed && (
                 <ul className="dropdown-item">
+                    <li className="select-options">
+                        <button onClick={selectAll}>Select All Fruits</button>
+                    </li>
+                    <li className="select-options">
+                        {selectedOptions.length > 0 && (
+                            <button onClick={deselectAll}>Reset</button>
+                        )}
+                    </li>
                     {fruits.map(fruit => (
                         <li key={fruit}>
                             <div onClick={() => multiSelect(fruit)} className="fruit-container">
@@ -55,16 +73,6 @@ function MultiDropdownMenu({fruits, selected}) {
                             </div>
                         </li>
                     ))}
-                    
-                    <li className="select-options">
-                        <button onClick={selectAll}>Select All Fruits</button>
-                        
-                    </li>
-                    <li className="select-options">
-                        {selectedOptions.length > 0 && (
-                            <button onClick={deselectAll}>Reset</button>
-                        )}
-                    </li>
                 </ul>
                     
             )

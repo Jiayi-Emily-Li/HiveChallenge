@@ -20,6 +20,31 @@
     background-color: #edf6fa;
 }
 
+.selected-container {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;  
+}
+
+.selected{
+    max-height: 30px; /* Set the maximum height for scrollability */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    list-style-type: none;
+    width: 200px;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;  
+}
+
+.default{
+    display: flex;  
+}
+
 .dropdown-item {
     position: absolute;
     background: rgb(248, 246, 246);
@@ -54,7 +79,6 @@
 }
 
 .select-options button {
-    flex: 1;
     color: rgb(0, 0, 0);
     border: none;
     border-radius: 4px; 
