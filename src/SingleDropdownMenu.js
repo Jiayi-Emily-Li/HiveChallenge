@@ -1,7 +1,7 @@
 import {useCallback, useState} from "react";
 import "./SingleDropdownMenu.css";
 
-function SingleDropdownMenu({bases, onSelect}) {
+function SingleDropdownMenu({bases, selected}) {
     const [isDropdownDisplayed, setIsDropdownDisplayed] = useState(false);
     const [selectedOptions, setSelectedOptions] = useState([]);
     const toggleDropdown = () => setIsDropdownDisplayed(!isDropdownDisplayed);
@@ -11,26 +11,12 @@ function SingleDropdownMenu({bases, onSelect}) {
     const singleSelect = useCallback((base) => {
         setSelectedOptions([base]);
         setIsDropdownDisplayed(false);
-        onSelect && onSelect([base]);
-    },[onSelect]);
+        selected && selected([base]);
+    },[selected]);
 
-    // const multiSelect = useCallback((fruit) => {
-    //     if(selectedOptions.includes(fruit)){
-    //         setSelectedOptions(prev => prev.filter(item => item !== fruit));
-    //     }
-    //     else{
-    //         setSelectedOptions(prev => [...prev, fruit]);
-    //     }
-    //     onSelect(selected);
-    // }, [selected, onSelect]);
-
-    // const selectAll = useCallBack(() => {
-    //     setSelectedOptions(fruits);
-    // }, [fruits]);
-
-    // const deselectAll = useCallBack(() => {
-    //     setSelectedOptions([]);
-    // }, []);
+    const deselectAll = useCallback(() => {
+        setSelectedOptions([]);
+    }, []);
 
     return (
         <div className="dropdown">
@@ -49,9 +35,12 @@ function SingleDropdownMenu({bases, onSelect}) {
 
                             </div>
                         </li>
-                    ))
-
-                    }
+                    ))}
+                    <li className="select-options">
+                        {selectedOptions.length > 0 && (
+                        <button onClick={deselectAll}>Reset</button>
+                        )}
+                    </li>
                 </ul>
                     
             )

@@ -16,10 +16,10 @@ function App() {
     <div className="App">
       <div className="dropdown-container">
         <div className="single-dropdown">
-          <SingleDropdownMenu bases={bases} onSelect={selectCheck}/>
+          <SingleDropdownMenu bases={bases} selected={selectCheck}/>
         </div>
         <div className="multiple-dropdown">
-          <MultiDropdownMenu fruits={fruits} onSelect={selectCheck}/>
+          <MultiDropdownMenu fruits={fruits} selected={selectCheck}/>
         </div>
       </div>
     </div>
