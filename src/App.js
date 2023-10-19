@@ -4,7 +4,7 @@ import MultiDropdownMenu from './MultiDropdownMenu'
 
 function App() {
 
-  const bases = ['Plain Yogurt', 'Coconut Yogurt', 'Strawberry Yogurt', 'Blueberry Yogurt'];
+  const bases = ['Plain Yogurt', 'Coconut Yogurt', 'Strawberry Yogurt', 'Blueberry Yogurt', 'Banana Yogurt', 'Peach Yogurt'];
 
   const fruits = ['Strawberry', 'Blueberry', 'Banana', 'Mango', 'Raspberry', 'Pineapple', 'Orange', 'Kiwi'];
 

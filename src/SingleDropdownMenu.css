@@ -1,13 +1,14 @@
 .dropdown-container {
     margin: 100px;
     display: flex;
-    gap: 200px;
+    flex-direction: column;
 }
 
 .single-dropdown{
     margin: 10px;
     display: flex;
     align-items: center;
+    padding-bottom: 300px;
 }
 
 .multiple-dropdown{
@@ -28,6 +29,7 @@
     color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
+    text-align: center;
     padding-left: 10px; 
     border-radius: 4px;
     font-size: 14px;

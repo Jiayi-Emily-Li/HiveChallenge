@@ -25,8 +25,6 @@
     width: 100%;
     cursor: pointer;
     align-items: center;
-    justify-content: center;
-    text-align: center;  
 }
 
 .selected{
@@ -34,11 +32,9 @@
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
     list-style-type: none;
     width: 200px;
-    padding-left: 10px;
+    padding-left: 0px;
     align-items: center;
-    justify-content: center;
     width: 100%;
-    text-align: center;  
 }
 
 .default{
