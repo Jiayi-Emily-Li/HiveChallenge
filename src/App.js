@@ -4,11 +4,11 @@ import MultiDropdownMenu from './MultiDropdownMenu'
 
 function App() {
 
-  const bases = ['Plain', 'Coconut', 'Strawberry', 'Blueberry'];
+  const bases = ['Plain Yogurt', 'Coconut Yogurt', 'Strawberry Yogurt', 'Blueberry Yogurt'];
 
   const fruits = ['Strawberry', 'Blueberry', 'Banana', 'Mango', 'Raspberry'];
 
-  const handleSelect = (selectedOptions) => {
+  const selectCheck = (selectedOptions) => {
     console.log('Selected:', selectedOptions);
   };
 
@@ -16,10 +16,10 @@ function App() {
     <div className="App">
       <div className="dropdown-container">
         <div className="single-dropdown">
-          <SingleDropdownMenu bases={bases} onSelect={handleSelect}/>
+          <SingleDropdownMenu bases={bases} onSelect={selectCheck}/>
         </div>
         <div className="multiple-dropdown">
-          <MultiDropdownMenu fruits={fruits} onSelect={handleSelect}/>
+          <MultiDropdownMenu fruits={fruits} onSelect={selectCheck}/>
         </div>
       </div>
     </div>

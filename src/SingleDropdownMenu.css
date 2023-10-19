@@ -20,25 +20,36 @@
 }
 
 .dropdown button{
-    background: white;
+    background: rgb(248, 246, 246);
     height: 30px;
     width: 200px;
-    color: black;
+    color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     padding-left: 10px; 
 }
 
-.dropdown:hover {
-    background-color: #525357;
+.dropdown button:hover {
+    background-color: #edf6fa;
 }
 
 .dropdown-item {
     position: absolute;
-    background: white;
+    background: rgb(248, 246, 246);
     padding: 10px;
     color: black;
     width: 100%;
+    list-style-type: none;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item li {
+    padding: 10px 15px;
+}
+
+.dropdown-item li:hover {
+    background-color: #edf6fa;
 }
 
 .base-container {

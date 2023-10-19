@@ -37,7 +37,7 @@ function SingleDropdownMenu({bases, onSelect}) {
             <button onClick={toggleDropdown}>
                 {selectedOptions.length
                     ? selectedOptions.join(', ')
-                    : "Select Your Base"}
+                    : "Select Your Yogurt Base"}
             </button>
             {isDropdownDisplayed && (
                 <ul className="dropdown-item">
