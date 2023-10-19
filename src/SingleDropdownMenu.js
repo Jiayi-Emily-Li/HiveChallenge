@@ -1,7 +1,7 @@
 import {useCallback, useState} from "react";
 import "./SingleDropdownMenu.css";
 
-function DropdownMenu(fruits, onSelect) {
+function SingleDropdownMenu({bases, onSelect}) {
     const [isDropdownDisplayed, setIsDropdownDisplayed] = useState(false);
     const [selectedOptions, setSelectedOptions] = useState([]);
     const toggleDropdown = () => setIsDropdownDisplayed(!isDropdownDisplayed);
@@ -11,40 +11,41 @@ function DropdownMenu(fruits, onSelect) {
     const singleSelect = useCallback((base) => {
         setSelectedOptions([base]);
         setIsDropdownDisplayed(false);
-        onSelect
+        onSelect && onSelect([base]);
     },[onSelect]);
 
-    const multiSelect = useCallback((fruit) => {
-        if(selectedOptions.includes(fruit)){
-            setSelectedOptions(prev => prev.filter(item => item !== fruit));
-        }
-        else{
-            setSelectedOptions(prev => [...prev, fruit]);
-        }
-        onSelect(selected);
-    }, [selected, onSelect]);
+    // const multiSelect = useCallback((fruit) => {
+    //     if(selectedOptions.includes(fruit)){
+    //         setSelectedOptions(prev => prev.filter(item => item !== fruit));
+    //     }
+    //     else{
+    //         setSelectedOptions(prev => [...prev, fruit]);
+    //     }
+    //     onSelect(selected);
+    // }, [selected, onSelect]);
 
-    const selectAll = useCallBack(() => {
-        setSelectedOptions(fruits);
-    }, [fruits]);
+    // const selectAll = useCallBack(() => {
+    //     setSelectedOptions(fruits);
+    // }, [fruits]);
 
-    const deselectAll = useCallBack(() => {
-        setSelectedOptions([]);
-    }, []);
+    // const deselectAll = useCallBack(() => {
+    //     setSelectedOptions([]);
+    // }, []);
 
     return (
         <div className="dropdown">
             <button onClick={toggleDropdown}>
-                {selected.length
-                    ? selected.join(', ')
-                    : "Select Your Fruits"}
+                {selectedOptions.length
+                    ? selectedOptions.join(', ')
+                    : "Select Your Base"}
             </button>
             {isDropdownDisplayed && (
                 <ul className="dropdown-item">
                     
-                    {fruits.map(fruit => (
-                        <li key={fruit}>
-                            <div onClick={() => }>
+                    {bases.map(base => (
+                        <li key={base}>
+                            <div onClick={() => singleSelect(base)} className="base-container">
+                                <span>{base}</span>
 
                             </div>
                         </li>
@@ -61,4 +62,4 @@ function DropdownMenu(fruits, onSelect) {
     )
 }
 
-export default DropdownMenu;
+export default SingleDropdownMenu;

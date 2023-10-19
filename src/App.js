@@ -4,7 +4,7 @@ import MultiDropdownMenu from './MultiDropdownMenu'
 
 function App() {
 
-  const base = ['Plain', 'Coconut', 'Strawberry', 'Blueberry'];
+  const bases = ['Plain', 'Coconut', 'Strawberry', 'Blueberry'];
 
   const fruits = ['Strawberry', 'Blueberry', 'Banana', 'Mango', 'Raspberry'];
 
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <div className="dropdown-container">
         <div className="single-dropdown">
-          <SingleDropdownMenu base={base} onSelect={handleSelect}/>
+          <SingleDropdownMenu bases={bases} onSelect={handleSelect}/>
         </div>
         <div className="multiple-dropdown">
           <MultiDropdownMenu fruits={fruits} onSelect={handleSelect}/>
